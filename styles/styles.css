@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /* Colors */
+    --light-main-color: #F6F8FF;
+    --dark-main-color: #141C2F;
+    --primary-color: #0079FA;
+    --primary-hover-color: #068fff;
+    --primary-active-color: #0079fa;
+    --primary-light-color: #edfaff;
+    --primary-ultra-soft-color: #d6f2ff;
+    --primary-soft-color: #b5eaff;
+    --gray-color: #afb0b0;
+
+    /* Paddings */
+    --padding: 70px 50px;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--light-main-color);
+}
+
+/* Nav */
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding);
+}
+
+/* #nav .nav-logo {
+    p {
+
+    }
+} */
+
+#nav .nav--dark-mode {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+/* Searcher */
+#searcher {
+    background-color: white;
+    width: 100%;
+    min-width: 400px;
+    max-width: 500px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+#searcher form {
+    display: flex;
+    justify-content: space-center;
+    align-items: center;
+    height: 100%;
+    padding: 0 15px;
+
+    & .searcher--input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    & .searcher--input label .fa-magnifying-glass {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+
+    & .searcher--input input {
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+
+    & .searcher--btn button{
+        width: 75px;
+        padding: 10px;
+        margin-left: 5px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        /* background-color: var(--primary-color); */
+        color: white;
+        /* cursor: pointer; */
+    }
+
+    & .searcher--btn .searcher--btn__enable {
+        background-color: var(--primary-color);
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--primary-hover-color);
+        }
+
+        &:active {
+            background-color: var(--primary-active-color);
+        }
+    }
+
+    & .searcher--btn .searcher--btn__disabled {
+        background-color: var(--primary-soft-color);
+        color: var(--primary-color);
+        font-weight: normal;
+        pointer-events: none;
+    }
+
+    
+}
+
+/* Card */
+#card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    min-width: 300px;
+    max-width: 500px;
+    height: fit-content;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.card--basic-info {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    width: 100%;
+    height: fit-content;
+
+    & .card--basic-info__user-img {
+        width: 120px;
+        height: 120px;
+
+        & img {
+            width: 100%;
+            border-radius: 100%;
+        }
+    }
+
+    & .card--basic-info__user-info {
+        & h3 {
+            font-weight: bold;
+            font-size: 3.5rem;
+        }
+
+        & h6 {
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+
+        & p {
+            font-size: 1.3rem;
+            color: var(--gray-color);
+        }
+    }
+}
+
+.card--description {
+    font-size: 1.7rem;
+}
+
+.card--repo-follow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    padding: 15px;
+    background-color: var(--light-main-color);
+    border-radius: 10px;
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+        font-size: 2rem;
+
+        & h6 {
+            color: var(--gray-color);
+        }
+
+        & p {
+            font-weight: bold;
+        }
+    }
+}
