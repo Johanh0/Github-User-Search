@@ -67,14 +67,33 @@ function insertHTML(userData) {
       </div>
 
       <!-- Links of User -->
-      <!-- <div>
+      <div class="card--links">
+        <div>
+          <i class="fa-solid fa-location-dot"></i>
+          <p>${userData.location}</p>
+        </div>
 
-      </div> -->
+        <div>
+          <i class="fa-solid fa-link"></i>
+          <a href="${userData.html_url}" target="_blank">${
+    userData.html_url
+  }</a>
+        </div>
+
+        ${
+          userData.company
+            ? `
+            <div>
+              <i class="fa-solid fa-building"></i>
+              <p>${userData.company}</p>
+            </div>
+            `
+            : ""
+        }
+      </div>
   </section>
   `;
   document.querySelector("main").insertAdjacentHTML("beforeend", template);
-
-  console.log(userData);
 }
 
 // Validate if the input is empty
