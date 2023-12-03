@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body class="light--mode">
     <header>
         <nav id="nav">
             <div class="nav--logo">
@@ -15,8 +15,8 @@
             </div>
     
             <div class="nav--dark-mode">
-                <p>Switch</p>
-                <span>Icon</span>
+                <p class="nav--dark-mode_text">Dark</p>
+                <i id="icon--toggle" class="fa-solid fa-moon" data-status="light"></i>
             </div>
         </nav>
     </header>
@@ -42,6 +42,17 @@
 
         <!-- Card Body -->
 
+
+        <!-- Loader -->
+        <svg viewBox="25 25 50 50" id="loader">
+            <circle r="20" cy="50" cx="50"></circle>
+        </svg>
+
+        <!-- Error Message -->
+        <div id="error-message">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <p>This user doesn't exist</p>
+        </div>
     </main>
 
     <script src="./js/index.js"></script>

@@ -8,6 +8,7 @@
     /* Colors */
     --light-main-color: #F6F8FF;
     --dark-main-color: #141C2F;
+    --dark-secondary-color: #1F2A48;
     --primary-color: #0079FA;
     --primary-hover-color: #068fff;
     --primary-active-color: #0079fa;
@@ -15,6 +16,7 @@
     --primary-ultra-soft-color: #d6f2ff;
     --primary-soft-color: #b5eaff;
     --gray-color: #afb0b0;
+    --semi-gray-blue-color: #4F6A94;
 
     /* Paddings */
     --padding: 50px 0px;
@@ -24,7 +26,62 @@
 html {
     font-size: 62.5%;
     font-family: 'Open Sans', sans-serif;
+}
+
+body.light--mode {
     background-color: var(--light-main-color);
+    color: var(--semi-gray-blue-color);
+
+    & #searcher {
+        background-color: white;
+    }
+
+    & #card {
+        background-color: white;
+    }
+
+    & #card .card--repo-follow {
+        background-color: var(--light-main-color);
+    }
+    
+    & #error-message {
+        background-color: white;
+    }
+}
+
+body.dark--mode {
+    background-color: var(--dark-main-color);
+    color: white;
+
+    & #searcher {
+        background-color: var(--dark-secondary-color);
+
+        & input {
+            background-color: var(--dark-secondary-color);
+            color: white;
+        }
+
+        & input::placeholder {
+            color: white;
+        }
+
+    }
+
+    & #card {
+        background-color: var(--dark-secondary-color);
+    }
+
+    & #card .card--repo-follow {
+        background-color: var(--dark-main-color);
+    }
+
+    & #card .card--links div a {
+        color: var(--primary-color);
+    }
+
+    & #error-message {
+        background-color: var(--dark-secondary-color);
+    }
 }
 
 /* Nav */
@@ -47,7 +104,20 @@ html {
 
 #nav .nav--dark-mode {
     display: flex;
+    align-items: center;
     gap: 15px;
+
+    & p {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    & i {
+        font-size: 2rem;
+        cursor: pointer;
+    }
 }
 
 
@@ -65,7 +135,7 @@ main {
 
 /* Searcher */
 #searcher {
-    background-color: white;
+    /* background-color: white; */
     width: 100%;
     max-width: 500px;
     height: 50px;
@@ -142,7 +212,7 @@ main {
     max-width: 500px;
     height: fit-content;
     padding: 15px;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 10px;
 }
 
@@ -195,7 +265,7 @@ main {
     align-items: center;
     gap: 45px;
     padding: 15px;
-    background-color: var(--light-main-color);
+    /* background-color: var(--light-main-color); */
     border-radius: 10px;
 
     & div {
@@ -237,8 +307,60 @@ main {
     }
 }
 
+/* Loader */
+svg {
+    display: none;
+    width: 3.25em;
+    transform-origin: center;
+    animation: rotate4 2s linear infinite;
+   }
+   
+   circle {
+    fill: none;
+    stroke: hsl(214, 97%, 59%);
+    stroke-width: 2;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: dash4 1.5s ease-in-out infinite;
+   }
+   
+   @keyframes rotate4 {
+    100% {
+     transform: rotate(360deg);
+    }
+   }
+   
+   @keyframes dash4 {
+    0% {
+     stroke-dasharray: 1, 200;
+     stroke-dashoffset: 0;
+    }
+   
+    50% {
+     stroke-dasharray: 90, 200;
+     stroke-dashoffset: -35px;
+    }
+   
+    100% {
+     stroke-dashoffset: -125px;
+    }
+   }
 
-
+/* Error Message */
+#error-message {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 500px;
+    height: fit-content;
+    padding: var(--padding);
+    border-radius: 10px;
+    font-size: 1.7rem;
+}
 
 @media (max-width: 600px) {
     #nav, main {
